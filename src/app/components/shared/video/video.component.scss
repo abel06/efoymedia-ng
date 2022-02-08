@@ -1,0 +1,47 @@
+:host {
+    margin-bottom: 1em;
+    display: block;
+  }
+  
+  // .video {
+  //   position: relative;
+  //   background-color: white;
+  //   width: 100%;
+  //   height: 100%;
+  //   scroll-snap-align: start;
+  // }
+  
+  
+  
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .video-card {
+    max-width: 1024px;
+  }
+  
+  .header-image {
+    // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }

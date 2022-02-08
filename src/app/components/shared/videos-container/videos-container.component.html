@@ -1,0 +1,9 @@
+<div class="container">
+
+  <app-infinite-scroll (scrolled)="onScroll()" >
+
+    <app-video  *ngFor="let video of pagedVideos" [video]="video" ></app-video>    
+    <mat-spinner *ngIf="isLoading$ | async" style="margin: auto;"></mat-spinner>
+    
+  </app-infinite-scroll>
+</div>

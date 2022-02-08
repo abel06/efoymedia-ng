@@ -1,0 +1,1 @@
+<app-videos-container *ngIf="loaded" [view]="view" [page] ="page | async" [videos] ="videos | async" (loadMore)="loadMore()" ></app-videos-container>

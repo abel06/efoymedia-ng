@@ -1,0 +1,188 @@
+<!-- <div class="outer">
+    <div class="inner">
+      <form form name="form" [formGroup]="registrationForm">
+
+        <div class="form-group">
+          <label class="control-label">*First Name</label
+          ><input
+            class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                (f.firstname.dirty || f.firstname.touched) && f.firstname.errors
+            }"
+            formControlName="firstname"
+          />
+          <div
+            *ngIf="
+              f.firstname.invalid && (f.firstname.dirty || f.firstname.touched)
+            "
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.firstname.errors?.required">first name is required</div>
+            <div *ngIf="f.firstname.errors?.minlength">Minimum lenght is 4</div>
+            <div *ngIf="f.firstname.errors?.maxlength">Maximum lenth is 16</div>
+          </div>
+        </div>
+  
+
+        <div class="form-group">
+          <label class="control-label">*Last Name</label
+          ><input
+            class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                (f.lastname.dirty || f.lastname.touched) && f.lastname.errors
+            }"
+            formControlName="lastname"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">*E-mail</label
+          ><input
+            type="email"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': (f.email.dirty || f.email.touched) && f.email.errors
+            }"
+            formControlName="email"
+            (focusout)="attachEmailAsync()"
+            (focus)="detachEmailAsync()"
+          />
+          <div
+            *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.email.errors?.required">email is required</div>
+            <div *ngIf="f.email.errors?.email">
+              Please enter your email address in format: yourname@example.com
+            </div>
+            <div *ngIf="f.email.errors?.emailExistValidator">
+              Email already Exist
+            </div>
+          </div>
+        </div>
+  
+
+        <div class="form-group">
+          <label class="control-label">*Password</label
+          ><input
+            type="password"
+            [ngClass]="{
+              'is-invalid':
+                (f.password.dirty || f.password.touched) && f.password.errors
+            }"
+            class="form-control"
+            formControlName="password"
+          />
+          <div
+            *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.password.errors?.required">password is required</div>
+            <div *ngIf="f.password.errors?.minlength">Minimum length is 8</div>
+            <div *ngIf="f.password.errors?.maxlength">Maximum length is 16</div>
+            <div *ngIf="f.password.errors?.pattern">
+              Your password must contain atleast one uppercase letter, number and
+              special character.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">*Confirm</label
+          ><input
+            type="password"
+            [ngClass]="{
+              'is-invalid':
+                ((f.confirmPassword.dirty || f.confirmPassword.touched) &&
+                  f.confirmPassword.errors) ||
+                (registrationForm.errors?.passwordNotMatch &&
+                  (f.confirmPassword.touched || f.confirmPassword.dirty))
+            }"
+            class="form-control"
+            formControlName="confirmPassword"
+          />
+        </div>
+  
+        <button
+          class="btn btn-dark btn-lg btn-block"
+          (click)="onSubmit()"
+          [disabled]="registrationForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+   -->
+
+
+
+
+
+    
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="width-50">
+        <mat-label>First Name</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="width-50 ml-2">
+        <mat-label>Surname</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="width-100">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Ex. pat@example.com">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="width-100">
+        <mat-label>Enter password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <label id="example-radio-group-label">Gender: </label>
+      <br><br>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="2">Female</mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="3">Custom</mat-radio-button>
+      </mat-radio-group>
+      <br><br>
+      <label id="example-radio-group-label">Date of birth: </label>
+      <br><br>
+      <mat-form-field appearance="fill" class="width-25">
+        <mat-label>Day</mat-label>
+        <mat-select>
+          <mat-option [value]="6">
+           26
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="width-25 ml-1">
+        <mat-label>Month</mat-label>
+        <mat-select>
+          <mat-option [value]="6">
+           26
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="width-25 ml-1">
+        <mat-label>Year</mat-label>
+        <mat-select>
+          <mat-option [value]="6">
+           26
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+   
